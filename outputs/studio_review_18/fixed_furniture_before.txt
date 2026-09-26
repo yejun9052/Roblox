@@ -1,0 +1,83 @@
+22:20:18.855  > local h=workspace.Surter_Remodel_10.Surter_Medical_Centre;for _,q in h:GetDescendants() do if q:IsA('BasePart') and q.Parent.Name~='Patient bay' and not q.Name:lower():find('headboard') and (q:FindFirstChildWhichIsA('SurfaceGui') or q.Name:lower():find('cabinet') or q.Name:lower():find('backplate') or q.Name:lower():find('backsplash') or q.Name=='Battery pickup prop') and q.Position.Y<54 and q.Position.Z>194 then print('ITEM',q.Parent.Name,q.Name,string.format('%.2f %.2f %.2f | %.2f %.2f %.2f',q.Position.X,q.Position.Y,q.Position.Z,q.Size.X,q.Size.Y,q.Size.Z)) end end  -  Studio
+  22:20:18.868  ITEM Level_0 Level guide 120.00 13.00 218.00 | 26.00 2.40 0.20  -  편집
+  22:20:18.869  ITEM Level_1 Level guide 120.00 31.00 218.00 | 26.00 2.40 0.20  -  편집
+  22:20:18.869  ITEM Level_2 Level guide 120.00 49.00 218.00 | 26.00 2.40 0.20  -  편집
+  22:20:18.870  ITEM Emergency_and_diagnostics Imaging sign 174.00 13.00 257.48 | 30.00 3.00 0.25  -  편집
+  22:20:18.870  ITEM Emergency_and_diagnostics Pharmacy sign 66.00 12.00 259.00 | 27.00 3.00 0.20  -  편집
+  22:20:18.870  ITEM Emergency_generator_room Service controller 154.00 7.00 307.80 | 8.00 3.00 0.25  -  편집
+  22:20:18.870  ITEM Emergency_generator_room Service controller 189.00 7.00 307.80 | 8.00 3.00 0.25  -  편집
+  22:20:18.870  ITEM Emergency_generator_room Generator door sign 149.00 12.00 294.00 | 28.00 3.00 0.25  -  편집
+  22:20:18.870  ITEM Architectural_finish Department sign 106.60 12.00 240.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 106.60 12.00 274.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 106.60 12.00 309.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 133.40 12.00 240.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 133.40 12.00 274.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 133.40 12.00 309.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 106.60 30.00 240.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 106.60 30.00 274.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 106.60 30.00 309.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 133.40 30.00 240.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 133.40 30.00 274.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.871  ITEM Architectural_finish Department sign 133.40 30.00 309.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.872  ITEM Architectural_finish Department sign 106.60 48.00 240.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.872  ITEM Architectural_finish Department sign 106.60 48.00 274.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.872  ITEM Architectural_finish Department sign 106.60 48.00 309.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.872  ITEM Architectural_finish Department sign 133.40 48.00 240.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.872  ITEM Architectural_finish Department sign 133.40 48.00 274.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.872  ITEM Architectural_finish Department sign 133.40 48.00 309.00 | 8.00 1.70 0.18  -  편집
+  22:20:18.872  ITEM Architectural_finish Hospital directory 150.00 8.00 195.00 | 24.00 5.00 0.20  -  편집
+  22:20:18.872  ITEM Architectural_finish Battery pickup prop 199.00 3.00 301.00 | 2.20 3.20 1.50  -  편집
+  22:20:18.872  ITEM Architectural_finish Power service notice 177.00 11.00 293.00 | 25.00 3.00 0.20  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Reception wall identity 66.00 10.00 223.35 | 29.00 4.00 0.18  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Triage entrance plaque 97.50 11.00 223.35 | 8.00 1.40 0.18  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Counter position 57.00 3.10 208.80 | 10.00 1.25 0.15  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Counter position 74.00 3.10 208.80 | 13.00 1.25 0.15  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Staff monitor 58.00 7.10 212.00 | 4.20 2.40 0.35  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Wall storage cabinet 58.00 2.40 222.00 | 10.00 3.80 2.50  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Cabinet handle 58.00 1.40 220.65 | 2.40 0.15 0.20  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Cabinet handle 58.00 2.50 220.65 | 2.40 0.15 0.20  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Cabinet handle 58.00 3.60 220.65 | 2.40 0.15 0.20  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Staff monitor 75.00 7.10 212.00 | 4.20 2.40 0.35  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Wall storage cabinet 75.00 2.40 222.00 | 10.00 3.80 2.50  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Cabinet handle 75.00 1.40 220.65 | 2.40 0.15 0.20  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Cabinet handle 75.00 2.50 220.65 | 2.40 0.15 0.20  -  편집
+  22:20:18.875  ITEM Reception_and_staff_workspace Cabinet handle 75.00 3.60 220.65 | 2.40 0.15 0.20  -  편집
+  22:20:18.875  ITEM Waiting_alcove Waiting direction 204.00 5.00 195.00 | 17.00 2.80 0.18  -  편집
+  22:20:18.875  ITEM Waiting_alcove Hand sanitiser backplate 134.50 4.20 226.00 | 0.30 2.40 1.30  -  편집
+  22:20:18.876  ITEM Pharmacy_dispensing Dispensing cabinet 91.00 2.50 274.00 | 5.00 4.00 18.00  -  편집
+  22:20:18.876  ITEM Pharmacy_dispensing Dispensing label 93.80 3.00 268.00 | 5.00 1.30 0.16  -  편집
+  22:20:18.876  ITEM Pharmacy_dispensing Cabinet pull 88.40 3.00 268.00 | 0.18 0.20 2.30  -  편집
+  22:20:18.876  ITEM Pharmacy_dispensing Dispensing label 93.80 3.00 274.00 | 5.00 1.30 0.16  -  편집
+  22:20:18.876  ITEM Pharmacy_dispensing Cabinet pull 88.40 3.00 274.00 | 0.18 0.20 2.30  -  편집
+  22:20:18.876  ITEM Pharmacy_dispensing Dispensing label 93.80 3.00 280.00 | 5.00 1.30 0.16  -  편집
+  22:20:18.876  ITEM Pharmacy_dispensing Cabinet pull 88.40 3.00 280.00 | 0.18 0.20 2.30  -  편집
+  22:20:18.876  ITEM Pharmacy_dispensing Terminal display 55.00 7.00 261.00 | 4.00 2.50 0.35  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Lab base cabinet 154.00 2.50 261.00 | 13.00 4.00 4.40  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Lab cabinet handle 150.80 3.20 263.35 | 1.80 0.18 0.20  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Lab cabinet handle 157.20 3.20 263.35 | 1.80 0.18 0.20  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Washable backsplash 154.00 6.00 258.62 | 13.50 3.00 0.35  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Lab base cabinet 173.00 2.50 261.00 | 13.00 4.00 4.40  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Lab cabinet handle 169.80 3.20 263.35 | 1.80 0.18 0.20  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Lab cabinet handle 176.20 3.20 263.35 | 1.80 0.18 0.20  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Washable backsplash 173.00 6.00 258.62 | 13.50 3.00 0.35  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Lab base cabinet 194.00 2.50 261.00 | 13.00 4.00 4.40  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Lab cabinet handle 190.80 3.20 263.35 | 1.80 0.18 0.20  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Lab cabinet handle 197.20 3.20 263.35 | 1.80 0.18 0.20  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Washable backsplash 194.00 6.00 258.62 | 13.50 3.00 0.35  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Laboratory identity 175.00 12.00 258.58 | 32.00 2.70 0.20  -  편집
+  22:20:18.876  ITEM Laboratory_workstations Analyser display 194.00 6.20 262.58 | 3.00 1.00 0.15  -  편집
+  22:20:18.876  ITEM Imaging_console Operator cabinet 146.00 2.50 252.00 | 11.00 4.00 4.00  -  편집
+  22:20:18.876  ITEM Imaging_console Terminal display 146.00 7.00 252.00 | 4.00 2.50 0.35  -  편집
+  22:20:18.876  ITEM Imaging_console Scanner safety sign 173.00 12.00 238.35 | 9.00 1.50 0.20  -  편집
+  22:20:18.877  ITEM Nurse_station_1 Terminal display 60.00 25.20 212.00 | 4.00 2.50 0.35  -  편집
+  22:20:18.877  ITEM Nurse_station_1 Terminal display 75.00 25.20 212.00 | 4.00 2.50 0.35  -  편집
+  22:20:18.877  ITEM Nurse_station_1 Ward file cabinet 49.00 20.50 196.00 | 12.00 4.00 2.60  -  편집
+  22:20:18.877  ITEM Nurse_station_1 Ward file cabinet 66.00 20.50 196.00 | 12.00 4.00 2.60  -  편집
+  22:20:18.877  ITEM Nurse_station_1 Ward file cabinet 83.00 20.50 196.00 | 12.00 4.00 2.60  -  편집
+  22:20:18.877  ITEM Nurse_station_1 Nurse counter identity 68.00 21.00 209.38 | 22.00 1.60 0.18  -  편집
+  22:20:18.877  ITEM Nurse_station_2 Terminal display 60.00 43.20 212.00 | 4.00 2.50 0.35  -  편집
+  22:20:18.877  ITEM Nurse_station_2 Terminal display 75.00 43.20 212.00 | 4.00 2.50 0.35  -  편집
+  22:20:18.877  ITEM Nurse_station_2 Ward file cabinet 49.00 38.50 196.00 | 12.00 4.00 2.60  -  편집
+  22:20:18.877  ITEM Nurse_station_2 Ward file cabinet 66.00 38.50 196.00 | 12.00 4.00 2.60  -  편집
+  22:20:18.877  ITEM Nurse_station_2 Ward file cabinet 83.00 38.50 196.00 | 12.00 4.00 2.60  -  편집
+  22:20:18.877  ITEM Nurse_station_2 Nurse counter identity 68.00 39.00 209.38 | 22.00 1.60 0.18  -  편집

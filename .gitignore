@@ -1,0 +1,8 @@
+# Local editor backups and temporary files
+*.rbxl.bak
+*.rbxlx.bak
+*.rbxl.lock
+*.autosave
+*.tmp
+.DS_Store
+Thumbs.db

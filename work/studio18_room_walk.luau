@@ -10,4 +10,3 @@ for _,r in routes do
  for i=2,#r[2] do local p=r[2][i];total+=1;hu:MoveTo(Vector3.new(p[1],y,p[2]));local ok=hu.MoveToFinished:Wait();print('H18 ROOM WALK',r[1],i,ok,char.HumanoidRootPart.Position);if not ok then warn('H18 ROOM STOP',r[1],i);return end;passed+=1 end
 end
 print('H18 ROOM RESULT',passed,total)
-

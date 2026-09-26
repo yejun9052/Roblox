@@ -12,4 +12,3 @@ for i,p in points do
  passed+=1
 end
 print('HOSPITAL18 PLAY RESULT',passed,'/',#points)
-

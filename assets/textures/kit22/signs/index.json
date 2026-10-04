@@ -1,0 +1,506 @@
+[
+ {
+  "text": "24시 편의점",
+  "kind": "h",
+  "file": "h_00.png",
+  "aspect": 4.382,
+  "asset": "rbxassetid://140355570565549"
+ },
+ {
+  "text": "2F~5F",
+  "kind": "h",
+  "file": "h_01.png",
+  "aspect": 2.988,
+  "asset": "rbxassetid://77195608560869"
+ },
+ {
+  "text": "OPEN",
+  "kind": "h",
+  "file": "h_02.png",
+  "aspect": 2.798,
+  "asset": "rbxassetid://120495725938500"
+ },
+ {
+  "text": "PC방",
+  "kind": "h",
+  "file": "h_03.png",
+  "aspect": 1.908,
+  "asset": "rbxassetid://99415705609697"
+ },
+ {
+  "text": "SALE",
+  "kind": "h",
+  "file": "h_04.png",
+  "aspect": 2.514,
+  "asset": "rbxassetid://84026248904525"
+ },
+ {
+  "text": "↑ 계단",
+  "kind": "h",
+  "file": "h_05.png",
+  "aspect": 2.393,
+  "asset": "rbxassetid://81846178561879"
+ },
+ {
+  "text": "그린빌",
+  "kind": "h",
+  "file": "h_06.png",
+  "aspect": 2.455,
+  "asset": "rbxassetid://78632351292888"
+ },
+ {
+  "text": "꽃담 꽃집",
+  "kind": "h",
+  "file": "h_07.png",
+  "aspect": 3.36,
+  "asset": "rbxassetid://76948194299636"
+ },
+ {
+  "text": "노래방",
+  "kind": "h",
+  "file": "h_08.png",
+  "aspect": 2.492,
+  "asset": "rbxassetid://76215484845995"
+ },
+ {
+  "text": "다온빌",
+  "kind": "h",
+  "file": "h_09.png",
+  "aspect": 2.41,
+  "asset": "rbxassetid://136952266634141"
+ },
+ {
+  "text": "당구장",
+  "kind": "h",
+  "file": "h_10.png",
+  "aspect": 2.468,
+  "asset": "rbxassetid://75761890615867"
+ },
+ {
+  "text": "독서실",
+  "kind": "h",
+  "file": "h_11.png",
+  "aspect": 2.426,
+  "asset": "rbxassetid://101001161265391"
+ },
+ {
+  "text": "동네정육점",
+  "kind": "h",
+  "file": "h_12.png",
+  "aspect": 3.942,
+  "asset": "rbxassetid://77284942343387"
+ },
+ {
+  "text": "드림하우스",
+  "kind": "h",
+  "file": "h_13.png",
+  "aspect": 4.028,
+  "asset": "rbxassetid://136493137783103"
+ },
+ {
+  "text": "로즈빌",
+  "kind": "h",
+  "file": "h_14.png",
+  "aspect": 2.455,
+  "asset": "rbxassetid://113273869861890"
+ },
+ {
+  "text": "메디컬센터",
+  "kind": "h",
+  "file": "h_15.png",
+  "aspect": 3.943,
+  "asset": "rbxassetid://133377848611206"
+ },
+ {
+  "text": "명가김밥",
+  "kind": "h",
+  "file": "h_16.png",
+  "aspect": 3.234,
+  "asset": "rbxassetid://76260459561665"
+ },
+ {
+  "text": "모텔",
+  "kind": "h",
+  "file": "h_17.png",
+  "aspect": 1.693,
+  "asset": "rbxassetid://84381691758411"
+ },
+ {
+  "text": "미래하우스",
+  "kind": "h",
+  "file": "h_18.png",
+  "aspect": 3.985,
+  "asset": "rbxassetid://101844387291992"
+ },
+ {
+  "text": "밝은안경",
+  "kind": "h",
+  "file": "h_19.png",
+  "aspect": 3.167,
+  "asset": "rbxassetid://84828019484837"
+ },
+ {
+  "text": "병원",
+  "kind": "h",
+  "file": "h_20.png",
+  "aspect": 1.627,
+  "asset": "rbxassetid://93193509268172"
+ },
+ {
+  "text": "분양중",
+  "kind": "h",
+  "file": "h_21.png",
+  "aspect": 2.483,
+  "asset": "rbxassetid://73679740851546"
+ },
+ {
+  "text": "블루PC방",
+  "kind": "h",
+  "file": "h_22.png",
+  "aspect": 3.508,
+  "asset": "rbxassetid://137930223352934"
+ },
+ {
+  "text": "샛별빌라",
+  "kind": "h",
+  "file": "h_23.png",
+  "aspect": 3.248,
+  "asset": "rbxassetid://111772156005201"
+ },
+ {
+  "text": "세종빌라",
+  "kind": "h",
+  "file": "h_24.png",
+  "aspect": 3.31,
+  "asset": "rbxassetid://122059045557219"
+ },
+ {
+  "text": "수강생모집",
+  "kind": "h",
+  "file": "h_25.png",
+  "aspect": 3.961,
+  "asset": "rbxassetid://134616732293667"
+ },
+ {
+  "text": "스크린골프",
+  "kind": "h",
+  "file": "h_26.png",
+  "aspect": 4.094,
+  "asset": "rbxassetid://84436990964339"
+ },
+ {
+  "text": "스타노래연습장",
+  "kind": "h",
+  "file": "h_27.png",
+  "aspect": 5.603,
+  "asset": "rbxassetid://93768896818766"
+ },
+ {
+  "text": "신장개업",
+  "kind": "h",
+  "file": "h_28.png",
+  "aspect": 3.208,
+  "asset": "rbxassetid://85311989025583"
+ },
+ {
+  "text": "엄마반찬",
+  "kind": "h",
+  "file": "h_29.png",
+  "aspect": 3.261,
+  "asset": "rbxassetid://113469631630483"
+ },
+ {
+  "text": "영어전문학원",
+  "kind": "h",
+  "file": "h_30.png",
+  "aspect": 4.746,
+  "asset": "rbxassetid://72342130994185"
+ },
+ {
+  "text": "온누리세탁",
+  "kind": "h",
+  "file": "h_31.png",
+  "aspect": 4.042,
+  "asset": "rbxassetid://94124581983247"
+ },
+ {
+  "text": "왕만두분식",
+  "kind": "h",
+  "file": "h_32.png",
+  "aspect": 3.986,
+  "asset": "rbxassetid://121683016818211"
+ },
+ {
+  "text": "용감한태권도",
+  "kind": "h",
+  "file": "h_33.png",
+  "aspect": 4.81,
+  "asset": "rbxassetid://100468060720178"
+ },
+ {
+  "text": "우리약국",
+  "kind": "h",
+  "file": "h_34.png",
+  "aspect": 3.233,
+  "asset": "rbxassetid://134081575016483"
+ },
+ {
+  "text": "은하빌라",
+  "kind": "h",
+  "file": "h_35.png",
+  "aspect": 3.276,
+  "asset": "rbxassetid://107277765393043"
+ },
+ {
+  "text": "임대",
+  "kind": "h",
+  "file": "h_36.png",
+  "aspect": 1.635,
+  "asset": "rbxassetid://125805217219872"
+ },
+ {
+  "text": "임대문의",
+  "kind": "h",
+  "file": "h_37.png",
+  "aspect": 3.173,
+  "asset": "rbxassetid://124496875380236"
+ },
+ {
+  "text": "주차불가",
+  "kind": "h",
+  "file": "h_38.png",
+  "aspect": 3.279,
+  "asset": "rbxassetid://135426518423792"
+ },
+ {
+  "text": "참숯구이",
+  "kind": "h",
+  "file": "h_39.png",
+  "aspect": 3.181,
+  "asset": "rbxassetid://82702159397787"
+ },
+ {
+  "text": "참좋은내과",
+  "kind": "h",
+  "file": "h_40.png",
+  "aspect": 4.094,
+  "asset": "rbxassetid://106432818883833"
+ },
+ {
+  "text": "철물점",
+  "kind": "h",
+  "file": "h_41.png",
+  "aspect": 2.447,
+  "asset": "rbxassetid://134659811186997"
+ },
+ {
+  "text": "청솔빌라",
+  "kind": "h",
+  "file": "h_42.png",
+  "aspect": 3.292,
+  "asset": "rbxassetid://94876723494826"
+ },
+ {
+  "text": "층별안내",
+  "kind": "h",
+  "file": "h_43.png",
+  "aspect": 3.208,
+  "asset": "rbxassetid://107416868614162"
+ },
+ {
+  "text": "치킨",
+  "kind": "h",
+  "file": "h_44.png",
+  "aspect": 1.678,
+  "asset": "rbxassetid://83383863560818"
+ },
+ {
+  "text": "타워",
+  "kind": "h",
+  "file": "h_45.png",
+  "aspect": 1.607,
+  "asset": "rbxassetid://130457078615665"
+ },
+ {
+  "text": "탑수학학원",
+  "kind": "h",
+  "file": "h_46.png",
+  "aspect": 3.954,
+  "asset": "rbxassetid://128375219055892"
+ },
+ {
+  "text": "튼튼치과",
+  "kind": "h",
+  "file": "h_47.png",
+  "aspect": 3.282,
+  "asset": "rbxassetid://116011153481663"
+ },
+ {
+  "text": "프라자",
+  "kind": "h",
+  "file": "h_48.png",
+  "aspect": 2.5,
+  "asset": "rbxassetid://83333680344801"
+ },
+ {
+  "text": "피아노교습소",
+  "kind": "h",
+  "file": "h_49.png",
+  "aspect": 4.815,
+  "asset": "rbxassetid://127794420325929"
+ },
+ {
+  "text": "필라테스",
+  "kind": "h",
+  "file": "h_50.png",
+  "aspect": 3.251,
+  "asset": "rbxassetid://126820900620867"
+ },
+ {
+  "text": "학원",
+  "kind": "h",
+  "file": "h_51.png",
+  "aspect": 1.657,
+  "asset": "rbxassetid://115215193735041"
+ },
+ {
+  "text": "학원빌딩",
+  "kind": "h",
+  "file": "h_52.png",
+  "aspect": 3.198,
+  "asset": "rbxassetid://110906804766436"
+ },
+ {
+  "text": "한빛부동산",
+  "kind": "h",
+  "file": "h_53.png",
+  "aspect": 3.969,
+  "asset": "rbxassetid://139266236027128"
+ },
+ {
+  "text": "한빛빌라",
+  "kind": "h",
+  "file": "h_54.png",
+  "aspect": 3.214,
+  "asset": "rbxassetid://110589428336505"
+ },
+ {
+  "text": "한의원",
+  "kind": "h",
+  "file": "h_55.png",
+  "aspect": 2.434,
+  "asset": "rbxassetid://111315240817490"
+ },
+ {
+  "text": "할인",
+  "kind": "h",
+  "file": "h_56.png",
+  "aspect": 1.665,
+  "asset": "rbxassetid://137030009687091"
+ },
+ {
+  "text": "해피하우스",
+  "kind": "h",
+  "file": "h_57.png",
+  "aspect": 4.03,
+  "asset": "rbxassetid://120575269134509"
+ },
+ {
+  "text": "해피헤어",
+  "kind": "h",
+  "file": "h_58.png",
+  "aspect": 3.19,
+  "asset": "rbxassetid://123040731782634"
+ },
+ {
+  "text": "행복치킨",
+  "kind": "h",
+  "file": "h_59.png",
+  "aspect": 3.204,
+  "asset": "rbxassetid://94204931394195"
+ },
+ {
+  "text": "현대빌라",
+  "kind": "h",
+  "file": "h_60.png",
+  "aspect": 3.273,
+  "asset": "rbxassetid://83290189785216"
+ },
+ {
+  "text": "호프",
+  "kind": "h",
+  "file": "h_61.png",
+  "aspect": 1.981,
+  "asset": "rbxassetid://83217263487427"
+ },
+ {
+  "text": "CINEMA",
+  "kind": "v",
+  "file": "v_00.png",
+  "aspect": 0.123,
+  "asset": "rbxassetid://91965891847790"
+ },
+ {
+  "text": "HOTEL",
+  "kind": "v",
+  "file": "v_01.png",
+  "aspect": 0.142,
+  "asset": "rbxassetid://138649031032952"
+ },
+ {
+  "text": "PC방",
+  "kind": "v",
+  "file": "v_02.png",
+  "aspect": 0.301,
+  "asset": "rbxassetid://126858884797562"
+ },
+ {
+  "text": "노래방",
+  "kind": "v",
+  "file": "v_03.png",
+  "aspect": 0.309,
+  "asset": "rbxassetid://128020993536429"
+ },
+ {
+  "text": "당구장",
+  "kind": "v",
+  "file": "v_04.png",
+  "aspect": 0.317,
+  "asset": "rbxassetid://72491352711545"
+ },
+ {
+  "text": "모텔",
+  "kind": "v",
+  "file": "v_05.png",
+  "aspect": 0.466,
+  "asset": "rbxassetid://127052582829171"
+ },
+ {
+  "text": "병원",
+  "kind": "v",
+  "file": "v_06.png",
+  "aspect": 0.436,
+  "asset": "rbxassetid://135108224420005"
+ },
+ {
+  "text": "치킨",
+  "kind": "v",
+  "file": "v_07.png",
+  "aspect": 0.441,
+  "asset": "rbxassetid://88072772889494"
+ },
+ {
+  "text": "학원",
+  "kind": "v",
+  "file": "v_08.png",
+  "aspect": 0.47,
+  "asset": "rbxassetid://125662744762798"
+ },
+ {
+  "text": "호프",
+  "kind": "v",
+  "file": "v_09.png",
+  "aspect": 0.483,
+  "asset": "rbxassetid://109977246574713"
+ }
+]

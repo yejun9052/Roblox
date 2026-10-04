@@ -1,0 +1,9 @@
+[out:json][timeout:60];
+(
+  way["highway"](37.4900,127.0265,37.5015,127.0405);
+  way["building"](37.4900,127.0265,37.5015,127.0405);
+  way["leisure"](37.4900,127.0265,37.5015,127.0405);
+  way["landuse"](37.4900,127.0265,37.5015,127.0405);
+  way["amenity"~"school|hospital|parking|police|place_of_worship"](37.4900,127.0265,37.5015,127.0405);
+);
+out tags geom;

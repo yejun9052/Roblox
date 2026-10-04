@@ -1,0 +1,65 @@
+22번 건물 키트 (2026-10-03~04) — 진행 중 기록
+
+목표 (사용자): 참고 이미지(스타일라이즈드 파스텔 도시, 노을 하늘) 수준의 질감. 장르는 좀비 생존 유지.
+  Creator Store 모델은 악성 코드 우려로 쓰지 않고, 건물 종류를 함수로 만들어(약 30종) 같은 종류를 변형해 채운다. 주요 건물은 따로 모델링.
+
+새로 확인한 도구 (Studio 내장 MCP)
+- upload_image: 로컬 HTTP(127.0.0.1:34999) 의 PNG 를 Roblox 이미지 에셋으로 업로드 → rbxassetid. Import 창 없이 텍스처 사용 가능.
+  한 번에 15장 올리면 120초 넘어 백그라운드로 넘어감(결과는 정상). 가끔 500 오류 → 그 장만 다시.
+- generate_mesh: AI 메시(텍스처 포함 MeshPart 1개, 스크립트 없음). 품질 좋음. 연속 8건 이상이면 "Too Many Requests" 실패 → 2~5건씩.
+  생성물은 Y축 -150° 돌아가 있음 → 회전 0 으로 바로잡고 크기 지정.
+- generate_material: Studio 내부 오류(MaterialGenTool:210 assert)로 사용 불가.
+- loadstring: execute_luau 에서 사용 가능 → 키트 소스를 HTTP 로 받아 실행.
+- 스카이박스 면 방향(색 시험): Ft=-Z, Lf=+X, Bk=+Z, Rt=-X, Up=위(이미지 위쪽=+X, 오른쪽=-Z).
+
+만든 것
+- tools/buildingkit/make_textures.py (Blender Cycles 직교 렌더): 창 10종(커튼·깨짐·판자·키 큰·현대식), 문 2, 상점 정면 2, 난간, 덩굴, 화분상자,
+  커튼월 3, 셔터 3, 스테인드글라스 2, 그을음 2. tools/buildingkit/make_sky.py: 노을 스카이박스 6면. 골함석 타일 1.
+  id 는 assets/textures/kit22/ids.json.
+- tools/buildingkit/kit.luau + kit_types2.luau (deploy.sh 로 합침): 건물 31종
+  apt_balcony townhouse corner_shop brick_tenement apt_bay rowhouse_gable apt_modern apt_tower house_suburban house_bungalow duplex
+  walkup_narrow shop_row cafe_terrace convenience_store gas_station supermarket office_glass office_mid bank hotel diner clinic
+  parking_garage cinema warehouse factory fire_station church ruin(기존 종류를 짓고 무너뜨림) skeleton(공사 골조)
+  - 벽은 개구부를 뺀 사각형으로 분할 후 세로 병합(파트 최소화), 창은 벽 두께 안으로 들어간 텍스처 판 → 깊이감.
+  - 옆/뒤는 벽 1장 + 창 카드. 오피스 타워는 면마다 1장 + 커튼월 타일 텍스처.
+  - decay(0~1) 로 깨진 창·판자 창·덩굴 비율. seed 로 색·배치 변형.
+  - 조명 프리셋 Kit.applyLighting("dusk"): 노을 스카이박스(Lighting.Kit22_Sky, Added22) + 대기/색보정. 원래 값 Before22_* 속성.
+- ServerStorage.Kit22_Props (AI 메시 17종): StreetTree StreetLamp Planter_small WreckCar_A WreckTruck WreckVan WaterTank Bench TrashPile
+  ShoppingCart BusStop RubblePile RoofAC FuelPump CafeTable Dumpster Hydrant. (RubblePile 은 색이 붉어 폐허에는 파트 잔해 사용)
+
+시험장 (맵 서쪽, 맵 원본 손대지 않음)
+- Workspace.KitLab_22.Street (X≈-400, Z≈300): 거리 하나 + 13채 + 소품. work/studio22_lab.luau (재생성형).
+- Workspace.KitLab_22.Catalog (X -1100..-500, Z 40..640): 31종 한 채씩. work/studio22_catalog.luau (재생성형). 오류 0.
+- 종류별 파트 수 26~503, 31채 합계 약 4,000 (평균 130).
+
+남은 일
+- 사용자 확인: 스타일 OK 여부, Lighting.Technology = Future (MCP 로는 못 바꿈).
+- 맵 적용: 기존 건물 부지(91×91 칸)에 키트 건물 배치 계획, 진입 가능 건물·주요 건물(병원/학교/경찰서)은 유지 또는 별도 모델링.
+- 거리 꾸미기 함수(나무·가로등·벤치·폐차)를 키트로, 반복 장식(난간·창틀)의 메시화로 파트 절감.
+
+2026-10-04 추가
+- 저장 사고: Studio 창이 20번 경로에 묶여 있어 사용자의 저장이 SurterDays_Studio_20_LayoutFix.rbxl 을 덮어씀(00:22, 인스턴스 224,495 = 22번 작업).
+  → 그대로 SurterDays_Studio_22_BuildingKit.rbxl 로 복사(sha 5ec443e3). 원래 20번(sha 6f27e719)은 백업이 없어 소실 — 21번에서 21 변경을 되돌려 재구성 가능.
+  SurterDays_Studio_22_Apocalypse.rbxl(00:23) 은 21번과 같은 내용(인스턴스 215,133)을 다시 저장한 파일.
+  다음부터: 저장 요청 전에 현재 창이 묶인 파일을 .keep 으로 복사해 둘 것.
+- 조명: 새 Studio 는 Technology 대신 LightingStyle=Realistic + PrioritizeLightingQuality=true (이미 설정됨, 읽기 가능).
+- 나무: AI 메시 나무가 뭉툭해서 Kit.tree (tools/buildingkit/kit_nature.luau) 로 교체. Blender 잎 뭉치 텍스처 leaf_a/b/c(위쪽 밝게) 를
+  교차 카드 30쌍 + 안쪽 채움 구 3 + 줄기·가지 원기둥 5 + 화단. 한 그루 약 66파트. 사진 04_street_new_trees.jpg, 21_tree_leafcards.jpg.
+- 상점 차양 지지대가 수평이라 앞으로 튀어나오던 것 → 차양 경사를 따르게 수정.
+
+2026-10-04 아포칼립스 버전 (사용자: "느낌 좋은데 폐도시 느낌에 안 어울림, 차·건물 느낌은 좋음")
+- 하늘 "ash" (make_sky.py ash 프리셋: 먼지 낀 황회색 구름) + Kit.applyLighting("ash") (채도 -0.12, 짙은 대기). 원래 값 Before22_*.
+- tools/buildingkit/kit_apoc.luau: Kit.weather(model, {level}) = 색 바램, 벽 빗물 때(grime 텍스처), 바닥 이끼 띠(moss_a), 덩굴 추가,
+  깨진/판자 창·깨진 상점 유리 증가, 차양 찢김, 간판 기울어짐, 난간 일부 떨어짐.
+  Kit.tree leaves="dry"(갈색 듬성)/"dead"(잔가지만), Kit.grass(풀 교차 카드, grass_a/grass_dry), Kit.bush, Kit.crack(균열 데칼), Kit.debris.
+- 새 텍스처: leaf_dry, cracks_a/b, moss_a, grass_a/dry. 새 AI 소품: WreckJeep (덤불·잡초 AI 결과는 어색해 삭제).
+- 시험 거리 APOC=true: 나무 45% 정상/30% 마름/25% 죽음, 풀숲 70, 덤불 10, 균열 56, 잔해 14, 폐차 13(일부 뒤집힘·기움), 가로등 일부 기울임. Street 파트 3,430.
+- 사진 05_apoc_street_a.jpg, 06_apoc_street_b.jpg.
+
+2026-10-04 더 어둡게 (사용자: 이 프로젝트는 어린 층이 아니라 전 연령, 살짝 더 어둡게)
+- 하늘 "dark" (make_sky.py: 짙은 회갈색 구름, 지평선 주황) + 조명 "dark" (해 17.3시, 채도 -0.2, 대비 0.14, 대기 0.38/헤이즈 2.3).
+  처음 값(밝기 2.0·노출 -0.1)은 길바닥이 새까매져 중간으로 되돌림.
+- Kit.weather: burn(그을음 텍스처 벽 확률), fade(색 바램 추가). 시험 거리 burn 0.25, fade 0.08, level 0.9.
+- Kit.scorch(바닥 탄 자국), Kit.smoke(연기 기둥 ParticleEmitter, 선택 Fire+PointLight). 연기 3곳(1곳은 불). 연기는 Play 에서 확인 필요.
+- 나무: 정상 30% / 마름 40% / 죽음 30%. 탄 차 일부 밑 그을음.
+- 사진 07_dark_street_a.jpg, 08_dark_street_b.jpg.

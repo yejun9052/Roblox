@@ -1,3 +1,85 @@
+# Surter: Days — 서울(강남) 맵 1단계 (진행 중)
+
+최신 파일: `outputs/SurterDays_Gangnam_01.rbxl` (새 장소, 강남역~역삼역 블록). 22번 파일(`SurterDays_Studio_22_BuildingKit.rbxl`)은 건물 키트 시험장 보관용.
+
+- 방향: 강남구 북부를 실제 지도(OpenStreetMap) 기반으로 1 m = 3 스터드로 짓는다. 1단계 = 강남역~역삼역 블록 + 호수공원 섬 연구소(히든 보스). 설계 페이지 `outputs/seoul_plan_v3.html`.
+- 짓는 법: `work/gangnam01_build_block1.luau` 를 phase 별로 실행 (ground → park → buildings → streets → furniture → optimize → optimize_streets). 키트 `tools/buildingkit/*.luau` 는 `deploy.sh` 로 합쳐 로컬 수신기에서 loadstring.
+- 작업 기록·사진: `outputs/studio_review_gangnam01/audit_log.txt` (1~6차). 성능: BasePart 약 11만, Play 60 fps (M5).
+- 다음: 사용자 자전거 모델로 교체, 짙은 덩굴·옥상 잡동사니, 고층 빌딩 디테일, 튜토리얼 동선.
+
+## 이전 기록
+
+# Surter: Days — 건물 키트 22 (진행 중)
+
+최신 파일: `outputs/SurterDays_Studio_22_BuildingKit.rbxl` (2026-10-04 00:51 KST 저장, 4,497,507 bytes, 헤더 인스턴스 227,242). Studio 창은 이 파일에 묶여 있음.
+
+- 사용자 방향: 장르(좀비 생존) 유지, 스타일라이즈드 고퀄(참고 이미지) + **전 연령, 살짝 어두운 아포칼립스**. Creator Store 대신 자체 키트·AI 메시. (어린 층 대상 양산형은 별개 구상)
+- 만든 것: 건물 키트 31종(`tools/buildingkit/`), 텍스처(Blender 렌더 → MCP upload_image), 스카이박스 3종(dusk/ash/dark), 가로수 `Kit.tree`(잎 카드, 마름/죽음 변형),
+  풍화 `Kit.weather`, 풀숲·덤불·균열·잔해·그을음·연기, AI 소품 18종(`ServerStorage.Kit22_Props`, 폐차 반응 좋음). 조명은 "dark" 적용 중(원래 값 `Before22_*`).
+- 시험장만 있음: `Workspace.KitLab_22` (Street = 아포칼립스 거리, Catalog = 31종). **실제 맵에는 아직 적용 안 함.**
+- 사고: 저장이 20번 경로로 들어가 원래 20번 소실(백업 없음). 지금 `SurterDays_Studio_20_LayoutFix.rbxl` 은 22번 중간본과 같은 내용(sha 5ec443e3).
+  `SurterDays_Studio_22_Apocalypse.rbxl` 은 21번과 같은 내용. 두 파일 처리(20 재구성·삭제)는 사용자 답 대기.
+- 다음(내일 설명부터): ① 오늘 한 일 설명 ② 20번 복구·중복 파일 결정 ③ 실제 맵 적용 계획(부지별 종류 배정, 진입 가능·주요 건물은 유지/별도 모델링) ④ 불 꺼진 가로등.
+- 상세 `outputs/studio_review_22/audit_log.txt`, 사진 같은 폴더(07·08 이 최신 분위기).
+
+## 이전 기록
+
+# Surter: Days — 아포칼립스 분위기 21
+
+최신 파일: `outputs/SurterDays_Studio_21_Apocalypse.rbxl` (2026-10-03 23:08 KST 저장, 4,081,909 bytes, 헤더 인스턴스 215,133). 20번은 작업 전 백업으로 복원(sha 6f27e719 일치).
+
+- 사용자 요청: 도로 바리케이드가 너무 많이 막는 느낌 → 막힘(플레이 구역)은 유지하되 빈도를 낮추고 자연스럽게. 무너지고 불탄 아포칼립스 분위기, 불규칙한 폐차.
+- 도시 구조: 플레이 경로(활성 도로 68구간)는 한 줄, 나머지 바둑판 도로 212구간은 블록마다 콘크리트+높은 철망으로 막혀 있었음.
+- 바리케이드: 경로 입구 83곳만 남기고 안쪽 113곳 제거(파트 1,372 → `ServerStorage.Barricades_before_21`). 입구는 폐차 364대·잔해·그을음으로 교체.
+  보이지 않는 차단면(높이 24, 양옆 담장까지)으로 막힘 유지 — Play 에서 처음엔 폐차 위 점프·보도 틈 우회로 뚫려 보정함.
+- 거리: 경로 폐차 50(가운데 차선 비움)·막힌 도로 폐차 130, 잿더미 471, 외벽 그을음 106, 보도 잔해 더미 41, 연기 26·불타는 차 3, 기운 가로등 5.
+- 조명: 먼지·연기 낀 색감(대기 밀도/헤이즈↑, 채도 -0.3, 따뜻한 틴트). 원래 값 `Before21_*` 속성.
+- 검증: 경로 차선 12,240칸 겹침 0, Play 경로 66/68(나머지 2는 기존 탈출 게이트 경사로 구역), 바리케이드 정면 10/10·가장자리 11/12 막힘(나머지 1은 맵 외곽선 밖), B16·B13 정문 진입 OK.
+  연기는 편집 화면 캡처에 안 찍혀 Play 에서 눈으로 확인 필요. 상세 `outputs/studio_review_21/audit_log.txt`.
+- 파트: 새 `Workspace.Apocalypse_21` 10,922 (충돌 5,933) → Workspace BasePart 약 118,400 (20번 108,856).
+- 스크립트(적용 완료, 재실행 금지): `work/studio21_barricade_store.luau`(1회), `studio21_build_barricades.luau`·`studio21_build_streets.luau`(재생성형), `studio21_blocker_extend.luau`(요약본), `studio21_lighting.luau`.
+- 남은 일: 실제 플레이 화면에서 연기 확인, 무너진 건물(외곽 실루엣) 보강, 폐차를 메시로 바꿔 파트 수 줄이기. Orca 조작 없음.
+
+## 이전 기록
+
+# Surter: Days — 맵 배치 수정 20
+
+최신 파일: `outputs/SurterDays_Studio_20_LayoutFix.rbxl` (2026-10-03 22:07 KST 저장, 3,797,691 bytes, 헤더 인스턴스 203,280 = 19번 +36). 19번은 `outputs/SurterDays_Studio_19_PropOptimize.rbxl` 그대로 보존.
+
+- 사용자 요청: 맵 전체의 어색한 배치 — 병원 침대가 벽에서 떨어져 방 가운데, 계단 난간 공중 부양 등 — 를 고치기.
+- 병원: 계단 난간 기둥 36개를 디딤판 위로 내리고 동쪽에 36개 추가, 연속 손잡이 4개를 계단 경사로, 계단 구멍 난간 12개를 바닥 위로.
+  병동 위쪽 줄 병상 12곳(452파트)을 180° 돌려 칸막이벽에 머리판 밀착. 18번에서 "뒤에 벽 없음"으로 남겼던 그 12곳.
+- 진입 가능 건물 1층: 방 가운데 줄지어 있던 선반·책상·소파 57건을 가장 가까운 벽으로(책상 9건은 90° 회전). 뒷면이 문/개구부·겹침·문 2 스터드 이내면 유지.
+- 떠 있는 물건: 외곽 건물 창틀 1,068·조명 14 를 면에 붙이고, 도로 잔해·상자·판자 106 을 바닥으로. 농구 골대 2개(기둥 관통·림 부양) 정리.
+- 검증: 겹침 검사, 바닥 접점, Play 보행(병원 계단 9/9, 병동 17/17, 가구 앞 60/65 — 실패는 상자 위로 올라섬 등 통행 막힘 아님). 상세 `outputs/studio_review_20/audit_log.txt`.
+- 이동 파트 2,662 (CFrameBefore20 속성으로 원위치 가능), 추가 36 (Added20). 삭제 없음. BasePart 108,856.
+- 스크립트(적용 완료, 재실행 금지): `work/studio20_hospital_fix.luau`, `studio20_furniture_to_wall.luau`, `studio20_furniture_to_wall_pass2.luau`, `studio20_float_fix.luau`. 읽기 전용 검사: `studio20_float_audit.luau`.
+- 남은 일: 외곽 폐허 배경 잔해, 2층 이상 실내(대부분 비어 있음), 확장 구역 실내 세부, 0.17 스터드 길가 소품 간격. Orca 조작 없음.
+
+## 이전 기록
+
+# Surter: Days — 반복 소품 최적화 19
+
+최신 파일: `outputs/SurterDays_Studio_19_PropOptimize.rbxl` (2026-10-03 20:50 KST 저장, 3,779,463 bytes, 헤더 인스턴스 203,244). (드럼통 파일럿만 반영된 18:47 저장본은 `SurterDays_Studio_19_PropOptimize_barrelpilot.rbxl`로 보존). 18번은 git 원본 그대로.
+
+- 목표: 메시를 작은 삼각형 쐐기(WedgePart)로 분해해 만든 소품을 MeshPart로 교체해 파트 수를 줄임. 모양·위치는 그대로.
+- 결과: Workspace BasePart 190,004 → 108,820 (−43%). 작은 쐐기 62,945 + 드럼통 20,352 → 1,499 남음(12개 미만 묶음 + 병원 벤치 140).
+  - 드럼통 24개: 854파트 → MeshPart 3 + 원통 Part 3. (barrel_detail_v2.fbx)
+  - 1차 비충돌 장식(쓰레기통·상자 끈/라벨·호스·볼트 등): 쐐기 32,015 → MeshPart 459 (메시 157종).
+  - 2차 충돌 소품(타이어·공구판·간이침대·소파·공구 등): 쐐기 29,431 → MeshPart 158 (메시 116종), CanCollide true, Default(15개 Precise).
+- 원본은 모두 `ServerStorage.Props_before_19` (Barrel_<id>, Phase1/Phase2.<gid>)에 보관, 각 파트 `OriginalParent19` 속성. 삭제 없음.
+- 방법: Studio에서 쐐기 묶음(같은 Parent+Name, 외형별)을 추출해 로컬 수신기(HTTP, 전송 동안만 HttpEnabled)로 받음 → Blender 헤드리스로 FBX → 사용자가 Import Queue로 가져옴 → 교체 스크립트. 모양이 같은 소품은 메시 공유.
+- 주의점(다음 작업에 그대로 적용):
+  - Import Queue는 모델 전체를 균일 배율로 줄이고 Y축 180° 회전 → Size 직접 지정 + 180° 보정. 축 배율이 같은지만 검사.
+  - 얇은 쐐기는 앞·뒤 면 2장으로(중앙면 1장이면 판에 반쯤 묻힌 글자가 사라짐 — 쓰레기통 "PAPER"→"P-PEP" 사례).
+  - 원통 Shape Part는 메시에 넣지 말 것. 같은 이름 형제 모델이 있으면 경로+이름 묶음이 섞임(병원 벤치 14개 사례 → 복귀).
+- 검증: 교체 전후 같은 카메라 사진(쓰레기통·라벨·상자·타이어·소파·드럼통) 일치. 2차 충돌: 레이 17,808개 중 1.1% 통과(얇은 면 가장자리), 설 수 있는 칸 비교, Play 보행 B14/B16/B01 왕복 성공, 정면 보행 막힘 확인, 타이어 더미는 원본과 같이 위로 올라섬.
+- 남은 일: 작은 쐐기 1,499개(작은 묶음)·병원 벤치는 유지. 타이어 윗면 조명 반사가 조금 다름. 저사양 성능 실측은 아직.
+- 스크립트(모두 적용 완료, 재실행 금지): `work/studio19_extract_barrel.luau`(읽기), `studio19_replace_barrel.luau`, `studio19_fix_barrel_cylinders.luau`, `studio19_extract_props.luau`, `studio19_replace_props.luau`(v1, 이후 v2로 대체), `studio19_reextract_props.luau`, `studio19_replace_props_v2.luau`. Blender: `tools/blender/build_barrel_fbx.py`, `tools/blender/build_props_fbx.py`. 데이터: `assets/source/`, FBX: `assets/fbx/`.
+- 검증 기록/사진: `outputs/studio_review_19/` (audit_log.txt). Orca 조작 없음.
+
+## 이전 기록
+
 # Surter: Days — 병원 가구 벽 접점 수정 18
 
 최신 파일: `outputs/SurterDays_Studio_18_HospitalFit.rbxl`. 2026-09-15 22:42:40 KST 저장 확인, 3,295,018 bytes. 17번 원본 보존. Studio는 편집 모드로 열려 있음.

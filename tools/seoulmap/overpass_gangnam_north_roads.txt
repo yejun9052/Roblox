@@ -1,0 +1,11 @@
+[out:json][timeout:180];
+(
+  way["highway"~"motorway|trunk|primary|secondary|tertiary|motorway_link|trunk_link|primary_link|residential|unclassified|living_street"](37.474,127.019,37.534,127.078);
+  way["waterway"~"river|stream|canal"](37.474,127.019,37.534,127.078);
+  way["natural"="water"](37.474,127.019,37.534,127.078);
+  way["leisure"~"park|garden|pitch|stadium"](37.474,127.019,37.534,127.078);
+  way["landuse"~"residential|commercial|grass|forest|cemetery"](37.474,127.019,37.534,127.078);
+  way["railway"="subway"](37.474,127.019,37.534,127.078);
+  way["bridge"="yes"]["highway"](37.474,127.019,37.534,127.078);
+);
+out tags geom;

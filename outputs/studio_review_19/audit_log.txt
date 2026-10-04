@@ -1,0 +1,49 @@
+19번 드럼통 파일럿 검사 (2026-10-03, Studio 편집 모드)
+
+교체 전 검사
+- 드럼통 24개, 폴더 15곳, 각 854파트 (steel: Wedge 768 + Cylinder 2 / plate: Wedge 80 + Cylinder 1 / faded: Block 3).
+- 14016 기준 꼭짓점 대조 최대 오차 0.0063 → 24개 모두 순수 평행이동.
+- 원본 장식은 모두 CanCollide=false, CanQuery=true, CastShadow=true.
+- 쐐기 두께 0.025 → 메시는 DoubleSided.
+
+가져오기
+- Import Queue 로 barrel_detail.fbx(v1), barrel_detail_v2.fbx 업로드. 단위 cm(×100), Y축 180° 회전 (plate 꼭짓점 대조 rotY180 0.0001 / identity 0.155).
+- Mesh ID: faded 100615478899558 / steel v2 96573297308710 / plate v2 87052899505644 (v1 steel 131754826422079, plate 80914810876677 미사용).
+- v1 은 원통 Part 3개를 박스로 넣어 뚜껑에 사각 판이 보임 (barrel_after_v1_square_lid.jpg). v2 에서 제외하고 원본 원통 Part 72개를 원래 폴더로 복귀.
+
+결과
+- 드럼통당 854파트 → MeshPart 3 + 원통 Part 3.
+- Workspace BasePart 190,004 → 169,649 (−20,355), WedgePart 90,756 → 70,404 (−20,352). (교체 전 수치에 가져온 템플릿 3개 포함)
+- ServerStorage BasePart 8,737 → 29,167 (Props_before_19 원본 20,424 + 템플릿 6).
+- 새 메시 bbox 와 원본 꼭짓점 bbox 오차 최대 0.0004 스터드 (72개).
+- 장식 바닥-지면 간격 0.075 (014026 은 0.245) — bbox 오차 0.0004 이므로 원본과 동일, 이번 변경 아님.
+- 화면: barrel_before.jpg / barrel_after.jpg 같은 카메라 (506,6,806)→(501,2,800), barrel_after_B14.jpg (985,7,1045)→(981,3,1040).
+- Play 보행 시험은 안 함 (새 메시 CanCollide/CanQuery false, 원본도 비충돌이라 충돌 형상 변화 없음).
+
+==== 소품 일괄 최적화 (2026-10-03, 19번 파일 갱신) ====
+대상: Workspace WedgePart 중 최대 변 < 1.5, 같은 Parent+Name 묶음 12개 이상. 1차 = 비충돌 묶음, 2차 = 충돌 묶음.
+추출: work/studio19_extract_props.luau (R19G 속성 표시) → 로컬 수신기 HTTP 전송 (HttpEnabled 는 전송 동안만 켜고 false 로 복구).
+v1 문제: 얇은 쐐기를 중앙면 1장으로 → 판에 반쯤 묻힌 쐐기가 가려짐 (쓰레기통 라벨 "PAPER"→"P-PEP", props_after_v1_label_broken.jpg).
+v2: 얇은 쐐기 = ±두께/2 앞·뒤 면 2장 (work/studio19_reextract_props.luau). 2차 H00050/H00148 은 쐐기 순서가 기준과 달라 고유 메시.
+가져오기: Import Queue 가 모델 전체를 균일 배율(p1 0.0227)로 줄이고 Y축 180° → Size 직접 지정 + 180° 보정. 축 배율 차 최대 0.0028(1차) / 0.0012(2차).
+결과:
+- 1차: 쐐기 32,015 → MeshPart 459 (메시 157종, 삼각형 28,542). CanCollide false, 나머지 속성은 원본 첫 쐐기 값.
+- 2차: 쐐기 29,571 → MeshPart 159 (메시 117종, 삼각형 44,290). CanCollide true, Default (차이 큰 15개 PreciseConvexDecomposition).
+- 원본 61,586 파트: ServerStorage.Props_before_19.Phase1/Phase2.<gid>, 각 파트 OriginalParent19 속성.
+- Workspace BasePart 169,649 → 108,681 (−60,968). 작은 쐐기 62,945 → 1,359 (12개 미만 묶음은 유지). CanCollide 파트 16,215.
+- 2차 충돌 비교: 묶음별 레이 112개 (위→아래 64, 수평 48), 총 17,808. 원본에선 맞고 메시는 통과 194 (1.1%, 쪽지·담요·빗물 파이프 등 얇은 면 가장자리),
+  더 깊이 들어감 78 (타이어 홈), 채워짐 146, 더 얕음 15. Precise 로 바꿔도 통과 194 그대로라 Default 유지.
+- 화면: props_before_*.jpg / props_after_*.jpg (쓰레기통·라벨·상자·타이어·소파). 타이어 윗면 주황 반사가 약간 약해짐(메시 법선 차이 추정).
+- Play 보행 시험은 아직 안 함.
+
+==== 추가 검증·보정 (2026-10-03 20:2x 이후) ====
+- 20:22 저장 (3,778,429 bytes, 인스턴스 +1,514 = MeshPart 618 + 묶음 폴더 618 + Phase 폴더 2 + 템플릿 모델 2·메시 274, 예상과 일치).
+- 설 수 있는 칸 비교 (2차 124묶음, 0.5 칸, 캐릭터 상자 2×4.8×2, GetPartsInPart): H00159 가 빈칸 1,273 을 새로 막음.
+  원인: Surter_Remodel_10.Creator_Benches 에 같은 이름 벤치 모델 14개 → 경로+이름 묶음이 14개 벤치 쐐기 140개를 한 메시(368×916 스터드)로 합침.
+  조치: H00159 메시 제거, 쐐기 140개를 각 벤치(원래 파트 AABB 판정, 거리 0)로 10개씩 복귀. 같은 경로 중복은 이 묶음뿐.
+  나머지 차이: 원본은 막힘→메시는 설 수 있음 1,338칸 (담요·쿠션·볼트 가장자리, 묶음당 최대 64칸), 새로 막음 10칸 (Couch base).
+- Play 보행 (일반 Humanoid 보행, 구간 시작점에만 순간이동): B14 타이어 앞 z=977 왕복 성공, B16 리프트 왕복, B01 거실 왕복, B01 현관 왕복 성공.
+  정면 보행: 리프트 호스·소파 팔걸이·소파 등받이에서 막힘. 타이어 더미는 원본·메시 모두 위로 올라섬(HRP Y≈9.0) — 동작 동일.
+  B14 x=985 경로 실패는 기존 건물 서쪽 벽(West wall.043) 때문으로 경로 선택 오류. x=982 경로 끝 5.6 스터드 전 멈춤은 타이어와 무관한 위치(z≈1044).
+- 최종 (Edit): Workspace BasePart 108,820 / 작은 쐐기 1,499 / R19V2 MeshPart 617 / ServerStorage BasePart 90,887 / HttpEnabled false.
+- 최종 저장 20:50 (3,779,463 bytes, 인스턴스 203,244 = 20:22 대비 −2: H00159 메시와 보관 폴더).
